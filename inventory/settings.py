@@ -25,7 +25,7 @@ SECRET_KEY = 'yv$4#s8zqdffbi425*3%-)n@g5zhp9jtx=1o4pf!++xb*wjj0v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.66', '0.0.0.0', '127.0.0.1', 'localhost', '10.42.2.86']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'inventory.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'intra',
+        'USER': 'admin',
+        'PASSWORD': 'mdp12345',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
