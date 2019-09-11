@@ -10,7 +10,8 @@ sudo apt-get install python3 \
 		     curl
 
 sudo systemctl restart postgresql
-sudo sh db/create_db.sh
+sudo -u postgres psql -f scripts/db.sql
+
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install virtualenv
 
@@ -21,4 +22,4 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 
-echo "Everything is ready"
+echo "Everything is ready. Don't forget to deactivate to exit virtualenv."
